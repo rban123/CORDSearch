@@ -1,0 +1,16 @@
+CORD-19-research-challenge.zip
+COVID.DATA.LIC.AGMT.pdf
+IDS.text
+__pycache__/
+biorxiv_medrxiv/
+comm_use_subset/
+cord19_specter_embeddings_2020-04-10/
+custom_license/
+extractor.py
+files.txt
+freesearch.py
+json_schema.txt
+metadata.csv
+metadata.readme
+noncomm_use_subset/
+test.py

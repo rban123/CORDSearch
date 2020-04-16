@@ -36,13 +36,14 @@ def importFilesFromTxt(name):
     return files
 
 #returns a tuple of all the abstracts from a given array of files and the length of that array
-def getAbstracts(files):
+def getAbstracts(files, verbosity="LOW"):
     abstracts = []
     for file in files:
         with open(file) as f:
             try:
                 abstr = json.load(f)
-                print("loading article: " + str(abstr['paper_id']))
+                if verbosity == "HIGH":
+                    print("extracting abstr. from: "  + str(abstr['paper_id']))
                 abstr = abstr['abstract']
                 if(len(abstr) > 0):
                     abstracts.append(abstr)
@@ -72,7 +73,7 @@ def mstFilter(terms, texts):
 #example code
 term = input("Enter search term for article abstracts: ")
 
-files = getFiles(COMM_USE_DIR)
+files = importFilesFromTxt('files.txt')
 abstrs = getAbstracts(files)
 filt = simpleFilter(abstrs, term)
 
